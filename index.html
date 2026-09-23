@@ -6,7 +6,7 @@
   <title>Shawal (@xshawalx)</title>
   <meta name="description" content="Personal hub for Shawal — IT Business Analyst, creator and digital builder. Explore his projects and public profiles.">
   <meta name="author" content="Shawal @xshawalx">
-  <meta name="theme-color" content="#000000">
+  <meta name="theme-color" content="#0d0d0e">
   <meta name="color-scheme" content="dark">
   <link rel="canonical" href="https://xshawalx.github.io/">
 
@@ -26,6 +26,9 @@
   <meta name="twitter:image" content="https://xshawalx.github.io/assets/social-preview.png">
 
   <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
   <script src="links.js" defer></script>
   <script src="app.js" defer></script>
@@ -53,9 +56,12 @@
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
 
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
   <div class="page-shell">
     <header class="topbar" aria-label="Site header">
-      <a class="wordmark" href="/" aria-label="Shawal home">XS.</a>
+      <a class="wordmark" href="/" aria-label="Shawal home">Shawal</a>
       <nav class="mini-nav" aria-label="Primary navigation">
         <a href="/prompts/">Prompts</a>
         <a href="/ugc/">UGC</a>
@@ -67,17 +73,28 @@
         <p class="eyebrow">@xshawalx</p>
         <h1 id="hero-title">SHAWAL<span aria-hidden="true">.</span></h1>
         <p class="intro">IT Business Analyst, creator and digital builder.</p>
-        <p class="micro">One place for what I build and where I share.</p>
+      </section>
+
+      <section class="section" aria-labelledby="social-title">
+        <div class="section-heading">
+          <p class="section-index" aria-hidden="true">01</p>
+          <h2 id="social-title">Where to find me</h2>
+        </div>
+
+        <div id="social-links" class="social-grid" aria-label="Shawal's public profiles"></div>
+        <noscript>
+          <p class="noscript-note">JavaScript is disabled. Visit @xshawalx on YouTube, Instagram, TikTok, Threads and Medium, or search “Mohd Noor Shawal” on LinkedIn.</p>
+        </noscript>
       </section>
 
       <section class="section" aria-labelledby="projects-title">
         <div class="section-heading">
-          <p class="section-index" aria-hidden="true">01</p>
+          <p class="section-index" aria-hidden="true">02</p>
           <h2 id="projects-title">What I build</h2>
         </div>
 
         <div class="project-grid">
-          <a class="project-card project-card--filled" href="/prompts/" aria-label="Explore Shawal's Prompt Library">
+          <a class="project-card project-card--featured" href="/prompts/" aria-label="Explore Shawal's Prompt Library">
             <div>
               <p class="project-kicker">AI / USEFUL TOOLS</p>
               <h3>Prompt Library</h3>
@@ -97,31 +114,18 @@
         </div>
       </section>
 
-      <section class="section" aria-labelledby="social-title">
-        <div class="section-heading">
-          <p class="section-index" aria-hidden="true">02</p>
-          <h2 id="social-title">Where to find me</h2>
-        </div>
-
-        <div id="social-links" class="social-grid" aria-label="Shawal's public profiles"></div>
-        <noscript>
-          <p class="noscript-note">JavaScript is disabled. Visit @xshawalx on YouTube, Instagram, TikTok, Threads and Medium, or search “Mohd Noor Shawal” on LinkedIn.</p>
-        </noscript>
-      </section>
-
       <section class="support" aria-labelledby="support-title">
         <div>
           <p class="section-index" aria-hidden="true">03</p>
           <h2 id="support-title">Support my work</h2>
           <p>Found something useful? You can support what I’m building.</p>
         </div>
-        <div id="support-action"></div>
+        <div id="support-action" class="support-actions"></div>
       </section>
     </main>
 
     <footer class="footer">
-      <p>Built by Shawal <span aria-hidden="true">·</span> @xshawalx</p>
-      <p>© <span id="current-year">2026</span></p>
+      <p>Shawal <span aria-hidden="true">·</span> @xshawalx</p>
     </footer>
   </div>
 </body>
