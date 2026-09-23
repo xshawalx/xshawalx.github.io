@@ -16,8 +16,10 @@
   const socialRoot = document.querySelector("#social-links");
   if (socialRoot) {
     const fragment = document.createDocumentFragment();
+
     config.social.forEach(({ label, url, icon }) => {
       if (!label || !url) return;
+
       const link = document.createElement("a");
       link.className = "social-link";
       link.href = url;
@@ -27,31 +29,27 @@
       link.innerHTML = `${icons[icon] || ""}<span class="social-label">${label}</span>`;
       fragment.appendChild(link);
     });
+
     socialRoot.appendChild(fragment);
   }
 
   const supportRoot = document.querySelector("#support-action");
-  if (supportRoot) {
-    const isConfigured = config.paypal && config.paypal !== "PAYPAL_URL_HERE";
-    if (isConfigured) {
+  if (supportRoot && Array.isArray(config.support)) {
+    const fragment = document.createDocumentFragment();
+
+    config.support.forEach(({ label, url, primary }) => {
+      if (!label || !url) return;
+
       const link = document.createElement("a");
-      link.className = "support-link";
-      link.href = config.paypal;
+      link.className = `support-link${primary ? " support-link--primary" : ""}`;
+      link.href = url;
       link.target = "_blank";
       link.rel = "noopener noreferrer";
-      link.textContent = "Support via PayPal ↗";
-      link.setAttribute("aria-label", "Support Shawal via PayPal — opens in a new tab");
-      supportRoot.appendChild(link);
-    } else {
-      const disabled = document.createElement("span");
-      disabled.className = "support-disabled";
-      disabled.setAttribute("role", "link");
-      disabled.setAttribute("aria-disabled", "true");
-      disabled.textContent = "Support via PayPal";
-      supportRoot.appendChild(disabled);
-    }
-  }
+      link.textContent = `${label} ↗`;
+      link.setAttribute("aria-label", `Support Shawal via ${label} — opens in a new tab`);
+      fragment.appendChild(link);
+    });
 
-  const year = document.querySelector("#current-year");
-  if (year) year.textContent = String(new Date().getFullYear());
+    supportRoot.appendChild(fragment);
+  }
 })();
