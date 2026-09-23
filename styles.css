@@ -310,8 +310,8 @@ a:focus-visible,
 .project-card h3 {
   margin: 8px 0 8px;
   color: var(--ink);
-  font: 800 clamp(1.75rem, 6vw, 2.45rem)/1.05 "Poppins", sans-serif;
-  letter-spacing: -.045em;
+  font: 800 var(--heading-size)/1.2 "Poppins", sans-serif;
+  letter-spacing: -.03em;
 }
 
 .project-card p:not(.project-kicker) {
