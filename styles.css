@@ -178,18 +178,19 @@ a:focus-visible,
 
 .hero h1 {
   margin: 9px 0 0;
-  font: 800 clamp(1.85rem, 6vw, 2.35rem)/1.08 "Poppins", sans-serif;
-  letter-spacing: -.045em;
+  font: 800 1.75rem/1.15 "Poppins", sans-serif;
+  letter-spacing: -.04em;
   color: var(--ink);
 }
 
 .hero h1 span { color: var(--accent); }
 
 .intro {
-  max-width: 620px;
-  margin: 15px 0 0;
+  max-width: none;
+  margin: 14px 0 0;
   color: var(--soft);
-  font: 600 clamp(.93rem, 2vw, 1.03rem)/1.7 "Open Sans", sans-serif;
+  font: 600 .9rem/1.6 "Open Sans", sans-serif;
+  white-space: nowrap;
 }
 
 .section {
@@ -448,11 +449,12 @@ a:focus-visible,
   }
 
   .hero h1 {
-    font-size: 1.85rem;
+    font-size: 1.65rem;
   }
 
   .intro {
-    font-size: .92rem;
+    font-size: .88rem;
+    white-space: normal;
   }
 
   .section,
