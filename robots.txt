@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://xshawalx.github.io/sitemap.xml
