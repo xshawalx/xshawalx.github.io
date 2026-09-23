@@ -162,7 +162,7 @@ a:focus-visible,
 }
 
 .hero {
-  padding: 66px 0 62px;
+  padding: 48px 0 46px;
   border-bottom: 1px solid var(--line);
 }
 
@@ -177,19 +177,19 @@ a:focus-visible,
 }
 
 .hero h1 {
-  margin: 10px 0 0;
-  font: 800 clamp(3.7rem, 15vw, 6.6rem)/.88 "Poppins", sans-serif;
-  letter-spacing: -.065em;
+  margin: 9px 0 0;
+  font: 800 clamp(1.85rem, 6vw, 2.35rem)/1.08 "Poppins", sans-serif;
+  letter-spacing: -.045em;
   color: var(--ink);
 }
 
 .hero h1 span { color: var(--accent); }
 
 .intro {
-  max-width: 520px;
-  margin: 22px 0 0;
+  max-width: 620px;
+  margin: 15px 0 0;
   color: var(--soft);
-  font: 600 clamp(1rem, 2.2vw, 1.13rem)/1.55 "Open Sans", sans-serif;
+  font: 600 clamp(.93rem, 2vw, 1.03rem)/1.7 "Open Sans", sans-serif;
 }
 
 .section {
@@ -444,11 +444,15 @@ a:focus-visible,
   }
 
   .hero {
-    padding: 52px 0 48px;
+    padding: 42px 0 40px;
   }
 
   .hero h1 {
-    font-size: clamp(3.25rem, 17vw, 4.75rem);
+    font-size: 1.85rem;
+  }
+
+  .intro {
+    font-size: .92rem;
   }
 
   .section,
