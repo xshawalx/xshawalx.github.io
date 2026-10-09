@@ -28,7 +28,7 @@
   const valid = p => p && typeof p.slug === "string" && p.slug.trim() &&
     typeof p.name === "string" && p.name.trim() && known.has(p.category) &&
     imageUrl(p.image) && ["I use this", "Recommended"].includes(p.badge) &&
-    Array.isArray(p.points) && p.points.length === 3 &&
+    Array.isArray(p.points) && p.points.length >= 2 && p.points.length <= 3 &&
     p.points.every(x => typeof x === "string" && x.trim()) &&
     p.cta && safeUrl(p.cta.url, ["https:", "http:", "mailto:"]);
   const records = (Array.isArray(data.products) ? data.products : [])
