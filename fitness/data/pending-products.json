@@ -1,0 +1,98 @@
+{
+  "note": "UNPUBLISHED. These are not loaded by the live page. Await badge for all five and an approved third point for corn and chickpeas. No placeholder claims or inferred personal-use badges.",
+  "items": [
+    {
+      "slug": "pharmanutri-whey-protein-isolate",
+      "name": "Pharmanutri Whey Protein Isolate",
+      "category": "whey-protein",
+      "image": "/fitness/assets/pharmanutri-whey-protein-isolate.png",
+      "points": [
+        "Protein tambahan",
+        "Tanpa gula",
+        "Lebih selesa untuk perut, jenis isolate"
+      ],
+      "sourceImage": "https://drive.google.com/file/d/10yfd9wHsXfkshxl8BkB0wz0OY1jq5dCr/view?usp=drivesdk",
+      "badge": null,
+      "cta": {
+        "type": "shopee",
+        "label": "Buy on Shopee",
+        "url": "https://s.shopee.com.my/50ZhB1ptqw"
+      },
+      "status": "awaiting-approval"
+    },
+    {
+      "slug": "marinated-chicken-breast",
+      "name": "Marinated Chicken Breast",
+      "category": "prep-meals",
+      "image": "/fitness/assets/marinated-chicken-breast.png",
+      "points": [
+        "50g protein per serving",
+        "180g Dada Ayam Pelbagai Perisa",
+        "Sesuai makan begitu sahaja atau makan dengan meal lain"
+      ],
+      "sourceImage": "https://drive.google.com/file/d/1i9U8fSEBTlW-GKkHSi6Cwmjqq0TvVOlG/view?usp=drivesdk",
+      "badge": null,
+      "cta": {
+        "type": "shopee",
+        "label": "Buy on Shopee",
+        "url": "https://s.shopee.com.my/8AWixlUhqY"
+      },
+      "status": "awaiting-approval"
+    },
+    {
+      "slug": "rte-grilled-corn-jagung",
+      "name": "RTE Grilled Corn/Jagung",
+      "category": "prep-meals",
+      "image": "/fitness/assets/rte-grilled-corn-jagung.png",
+      "points": [
+        "Sumber carbs sihat",
+        "Boleh makan terus"
+      ],
+      "sourceImage": "https://drive.google.com/file/d/1Bygjx7B-n9cbgo_drBmJjNhFiH41xYKL/view?usp=drivesdk",
+      "badge": null,
+      "cta": {
+        "type": "shopee",
+        "label": "Buy on Shopee",
+        "url": "https://s.shopee.com.my/70KlZzdoPt"
+      },
+      "status": "awaiting-approval"
+    },
+    {
+      "slug": "kacang-kuda-rebus",
+      "name": "Kacang Kuda Rebus",
+      "category": "prep-meals",
+      "image": "/fitness/assets/kacang-kuda-rebus.avif",
+      "points": [
+        "Sumber carbs sihat",
+        "Boleh makan terus"
+      ],
+      "sourceImage": "https://drive.google.com/file/d/163yVAGo4l2zUa1RSDsdvENiKbqmfZV4b/view?usp=drivesdk",
+      "badge": null,
+      "cta": {
+        "type": "shopee",
+        "label": "Buy on Shopee",
+        "url": "https://s.shopee.com.my/9APGAIf5Fu"
+      },
+      "status": "awaiting-approval"
+    },
+    {
+      "slug": "keledek-ungu",
+      "name": "Keledek Ungu",
+      "category": "prep-meals",
+      "image": "/fitness/assets/keledek-ungu.png",
+      "points": [
+        "Sumber carbs sihat",
+        "Boleh makan terus",
+        "Tanpa Pengawet, Tanpa Gula"
+      ],
+      "sourceImage": "https://drive.google.com/file/d/10CdIaicIcqOzfU9WdC2z4bAIYdZqlJ2j/view?usp=drivesdk",
+      "badge": null,
+      "cta": {
+        "type": "shopee",
+        "label": "Buy on Shopee",
+        "url": "https://s.shopee.com.my/8AWiyVYGE2"
+      },
+      "status": "awaiting-approval"
+    }
+  ]
+}

@@ -51,3 +51,11 @@ CTAs dispatch the browser-only `xshawalx:analytics` event with `fitness_product_
 ## Deployment and verification
 
 The root Pages branch automatically serves `/fitness/index.html`. After updates, check the site at widths 320, 375, 390, 430 and desktop, and test navigation across Home, UGC, Fitness and Prompts. Confirm that published affiliate URLs are preserved exactly. With no products yet, the page intentionally displays “Nothing here yet.”
+
+## Draft queue (9 October 2026)
+
+The file `fitness/data/pending-products.json` contains five user-provided products **not yet published**. Their original images are stored under `fitness/assets/` (including AVIF for the chickpeas image, whose original uploaded filename used .jpg even though its real format is AVIF). All approved short points and exact Shopee short links are preserved. Products remain hidden until complete.
+
+**Before publishing:** explicitly confirm each item's badge (`I use this` vs `Recommended`) and obtain the third approved point for `rte-grilled-corn-jagung` and `kacang-kuda-rebus`. No usage rank was specified; preserve the submitted order, including items within Prep Meals. Move valid entries into `fitness/data/catalog.js` and remove them from the draft queue; never display two-point drafts as final product cards.
+
+Images in the draft are currently original-source resolution. For page performance, optimize (resize/compress to WebP while preserving packaging) before or during final publication when practical.
