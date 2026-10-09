@@ -1,7 +1,6 @@
 /* Extends the root homepage design tokens; no separate brand palette. */
 .fitness-hero { padding: 37px 0 30px; }
 .fitness-hero .intro { white-space: normal; font-size: .91rem; max-width: 36rem; }
-.fitness-disclosure { max-width: 42rem; margin: 16px 0 0; color: var(--muted); font: 400 11px/1.7 "Open Sans",sans-serif; }
 .fitness-products { padding-top: 32px; }
 .fitness-products .section-heading { margin-bottom: 15px; }
 .fitness-filters { display: flex; flex-wrap: wrap; gap: 7px; margin: 0 0 18px; }

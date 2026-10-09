@@ -42,7 +42,7 @@ Do not invent health claims, usage frequency, badge, product variants, images or
 
 ## Shared navigation maintenance
 
-Navigation order on all four sites is **Home | UGC | Fitness | Prompts**, with active `aria-current="page"`. Styles are centrally served from `/assets/css/shared-nav.css` in this repository and loaded in the UGC and Prompts projects. Do not replace this with diverging local nav styles. The HTML in Prompt Library is authored by `xshawalx/prompts/scripts/build.mjs`, not its generated `dist/` files.
+Navigation order on all four sites is **Home | Fitness | UGC | Prompts**, with active `aria-current="page"`. Styles are centrally served from `/assets/css/shared-nav.css` in this repository and loaded in the UGC and Prompts projects. Do not replace this with diverging local nav styles. The HTML in Prompt Library is authored by `xshawalx/prompts/scripts/build.mjs`, not its generated `dist/` files.
 
 ## Analytics event
 
