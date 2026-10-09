@@ -5,7 +5,8 @@
 window.XSHAWALX_LINKS = {
   projects: {
     prompts: "https://xshawalx.github.io/prompts/",
-    ugc: "https://xshawalx.github.io/ugc/"
+    ugc: "https://xshawalx.github.io/ugc/",
+    fitness: "https://xshawalx.github.io/fitness/"
   },
   social: [
     { label: "YouTube", url: "https://www.youtube.com/@xshawalx", icon: "youtube" },

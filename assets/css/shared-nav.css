@@ -1,0 +1,113 @@
+/* One shared header/navigation across Home, UGC, Fitness and Prompts.
+   Hosted by the root Pages site: /assets/css/shared-nav.css
+   Keep the same classes and markup across all four sections. */
+.xs-header,
+.site-header.xs-header,
+.topbar.xs-header {
+  box-sizing: border-box;
+  width: min(calc(100% - 40px), 760px);
+  margin-inline: auto;
+  min-height: 72px;
+  height: auto;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  border: 0;
+  border-bottom: 1px solid rgba(255,255,255,.09);
+  background: transparent;
+  position: relative;
+  z-index: 20;
+}
+.topbar.xs-header { width: 100%; }
+.xs-header .xs-wordmark {
+  display: inline-flex;
+  align-items: center;
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 0;
+  margin: 0;
+  color: #f5f5f5;
+  font: 800 24px/1 "Poppins", Arial, sans-serif;
+  letter-spacing: -.04em;
+  text-transform: none;
+  white-space: nowrap;
+  text-decoration: none;
+}
+.xs-header .xs-wordmark:hover { color: #ff8a1f; }
+.xs-header .xs-nav {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  flex: 0 1 auto;
+  min-width: 0;
+}
+.xs-header .xs-nav a {
+  box-sizing: border-box;
+  position: static;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  min-height: 38px;
+  padding: 0 12px;
+  border: 1px solid rgba(255,255,255,.09);
+  border-radius: 10px;
+  background: rgba(23,23,23,.72);
+  color: #d0d0d0;
+  font: 600 11px/1.2 "Poppins", Arial, sans-serif;
+  letter-spacing: 0;
+  white-space: nowrap;
+  text-transform: none;
+  text-decoration: none;
+  transition: color 160ms, border-color 160ms, background 160ms;
+}
+.xs-header .xs-nav a::after { content: none; display: none; }
+.xs-header .xs-nav a:hover,
+.xs-header .xs-nav a[aria-current="page"] {
+  border-color: rgba(255,138,31,.42);
+  background: rgba(255,138,31,.13);
+  color: #ff8a1f;
+}
+.xs-header .xs-nav a:focus-visible,
+.xs-header .xs-wordmark:focus-visible {
+  outline: 2px solid #ff8a1f;
+  outline-offset: 3px;
+}
+@media (max-width: 520px) {
+  .xs-header,
+  .site-header.xs-header,
+  .topbar.xs-header {
+    width: min(calc(100% - 28px), 760px);
+    min-height: 0;
+    padding-block: 15px 12px;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 13px 0;
+  }
+  .topbar.xs-header { width: 100%; }
+  .xs-header .xs-wordmark { font-size: 22px; }
+  .xs-header .xs-nav {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 5px;
+  }
+  .xs-header .xs-nav a {
+    min-width: 0;
+    min-height: 40px;
+    padding: 0 4px;
+    font-size: 10px;
+  }
+}
+@media (max-width: 340px) {
+  .xs-header .xs-nav { gap: 4px; }
+  .xs-header .xs-nav a { font-size: 9px; padding: 0 2px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .xs-header .xs-nav a { transition: none; }
+}
