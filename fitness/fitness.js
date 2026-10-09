@@ -72,6 +72,12 @@
       referral:"Join / Sign Up", trainer:"View Trainer", contact:"Contact Me"
     }[type] || "Learn More"));
     a.href = url;
+    // Safe, public product attributes for the shared Shopee click tracker.
+    if (type === "shopee" && p && p.slug) {
+      a.dataset.productSlug = p.slug;
+      a.dataset.productName = p.name || "";
+      a.dataset.productCategory = p.category || "";
+    }
     if (!url.startsWith("mailto:")) {
       a.target = "_blank";
       a.rel = "noopener noreferrer" + (type === "shopee" || p.disclosure ? " sponsored" : "");
