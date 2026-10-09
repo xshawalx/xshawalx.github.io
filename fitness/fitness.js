@@ -38,9 +38,13 @@
       return valid(o.p);
     });
   const rank = p => Number.isFinite(p.usageRank) && p.usageRank > 0 ? p.usageRank : Infinity;
+  // An explicitly assigned listOrder takes precedence on the All view.
+  // Category-specific order continues to follow usageRank/manual order.
+  const listOrder = p => Number.isFinite(p.listOrder) ? p.listOrder : Infinity;
   records.sort((a,b) => {
+    const priorityDiff = listOrder(a.p) - listOrder(b.p);
     const catDiff = [...known.keys()].indexOf(a.p.category) - [...known.keys()].indexOf(b.p.category);
-    return catDiff || (rank(a.p) - rank(b.p)) || (a.index - b.index);
+    return priorityDiff || catDiff || (rank(a.p) - rank(b.p)) || (a.index - b.index);
   });
 
   let active = "all";
@@ -112,20 +116,22 @@
     img.height = 480;
     imageShell.append(img);
     card.append(imageShell);
+    const body = el("div", "fitness-card-body");
     const badges = el("div", "fitness-badges");
     badges.append(el("span", "fitness-badge", p.badge));
     if (["Sponsored","Paid partnership"].includes(p.disclosure))
       badges.append(el("span", "fitness-badge fitness-badge--disclosure", p.disclosure));
-    card.append(badges, el("h3","",p.name));
+    body.append(badges, el("h3","",p.name));
     const bullets = el("ul","fitness-points");
     p.points.forEach(point => bullets.append(el("li","",point)));
-    card.append(bullets);
+    body.append(bullets);
     const actions = el("div", "fitness-card-actions");
     const link = makeLink(p.cta,p);
     if (link) actions.append(link);
-    card.append(actions);
+    body.append(actions);
     const promo = promoNode(p);
-    if (promo) card.append(promo);
+    if (promo) body.append(promo);
+    card.append(body);
     return card;
   }
   function render() {

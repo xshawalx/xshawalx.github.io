@@ -20,6 +20,24 @@ window.XSHAWALX_FITNESS = {
   ],
   products: [
     {
+        "slug": "radiant-organic-apple-cider-vinegar",
+        "name": "Radiant Organic Apple Cider Vinegar",
+        "category": "apple-cider-vinegar",
+        "image": "/fitness/assets/radiant-organic-apple-cider-vinegar.png",
+        "badge": "I use this",
+        "listOrder": 0,
+        "points": [
+            "Bantu kawal gula dalam darah",
+            "Bantu mengawal hormon cortisol",
+            "Bagus untuk kesihatan perut"
+        ],
+        "cta": {
+            "type": "shopee",
+            "label": "Buy on Shopee",
+            "url": "https://s.shopee.com.my/1qcfcVGt19"
+        }
+    },
+    {
     "slug": "pharmanutri-whey-protein-isolate",
     "name": "Pharmanutri Whey Protein Isolate",
     "category": "whey-protein",
