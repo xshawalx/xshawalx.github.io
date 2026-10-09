@@ -45,7 +45,7 @@
 
   function isShopeeDomain(hostname) {
     // Check hostnames, not substring matches, to avoid lookalike domains.
-    return /(^|\\.)shopee\\.(com\\.my|sg|ph|co\\.id|co\\.th|vn|com)$/.test(hostname);
+    return /(^|\.)shopee\.(com\.my|sg|ph|co\.id|co\.th|vn|com)$/.test(hostname);
   }
 
   // Delegate once, so dynamically rendered cards and future Shopee CTAs work.
