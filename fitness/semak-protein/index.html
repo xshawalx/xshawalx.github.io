@@ -16,6 +16,8 @@
 <link rel="stylesheet" href="/assets/css/shared-nav.css">
 <link rel="stylesheet" href="/fitness/semak-protein/styles.css">
 <script src="/assets/js/analytics.js" defer></script>
+<script src="/links.js" defer></script>
+<script src="/app.js" defer></script>
 <script src="/fitness/semak-protein/data/catalog.js" defer></script>
 <script src="/fitness/semak-protein/submission-config.js" defer></script>
 <script src="/fitness/semak-protein/app.js" defer></script>
@@ -41,7 +43,7 @@
 
 <section class="section semak-directory" aria-labelledby="directory-title">
 <div class="section-heading"><p class="section-index">01 / DIRECTORY</p><h2 id="directory-title">Cari supplement</h2>
-<p class="semak-small">Independent reference index. Rating/opinion asal tidak disalin. “Belum disemak” bukan verdict.</p></div>
+<p class="semak-small">Source tags are simplified from SemakSuplemen opinions. They are not our independent review or proof of product safety.</p></div>
 <div class="semak-tabs" role="tablist" aria-label="Supplement categories">
 <button type="button" id="tab-whey" role="tab" aria-controls="semak-results" aria-selected="true" data-category="whey">Whey Protein</button>
 <button type="button" id="tab-mass" role="tab" aria-controls="semak-results" aria-selected="false" data-category="mass">Mass Gainer</button>
@@ -49,10 +51,11 @@
 <form id="semak-search-form" class="semak-toolbar" role="search">
 <label class="semak-search" for="semak-query"><span class="sr-only">Brand or product</span><input id="semak-query" type="search" placeholder="Cari brand / nama produk..." autocomplete="off"></label>
 <button type="submit" class="semak-btn semak-btn--accent">Search ⌕</button>
-<label class="semak-status" for="semak-status"><span class="sr-only">Filter by opinion status</span><select id="semak-status" aria-label="Filter by opinion status"><option value="all">Semua penilaian</option></select></label>
+<label class="semak-status" for="semak-status"><span class="sr-only">Filter by original source opinion</span><select id="semak-status" aria-label="Filter by original source opinion"><option value="all">All source tags</option></select></label>
 </form>
 <p id="semak-count" class="semak-count" role="status" aria-live="polite"></p>
 <div id="semak-results" class="semak-results" role="tabpanel" aria-labelledby="tab-whey"></div>
+<div class="semak-more-wrap"><button type="button" class="semak-btn" id="semak-view-more" hidden>View More ↓</button></div>
 <p id="semak-empty" class="semak-empty" hidden>Tak jumpa? Cuba keyword lain atau request a check di bawah.</p>
 <div class="semak-source-links">Original reference:
 <a id="semak-category-source" href="https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey" target="_blank" rel="noopener noreferrer">View the source listings ↗</a>
@@ -67,9 +70,26 @@
 
 <section class="section semak-method" aria-labelledby="method-title">
 <div class="section-heading"><p class="section-index">03 / SOURCES</p><h2 id="method-title">How to read this list</h2></div>
-<p>Senarai ini ialah pilihan rujukan ringkas, bukan salinan rating/ulasan daripada <a href="https://sites.google.com/view/semaksuplemen/home" target="_blank" rel="noopener noreferrer">SemakSuplemen</a>. Any original opinions belong to that author and can be read at the source link. Jenama, formula, pensijilan dan bukti ujian mungkin berubah.</p>
+<p>Senarai ini ialah pilihan rujukan ringkas. Label kategori ialah ringkasan pendapat sumber asal, bukan ujian makmal atau pendapat bebas kami. Senarai ini bukan salinan rating/ulasan penuh daripada <a href="https://sites.google.com/view/semaksuplemen/home" target="_blank" rel="noopener noreferrer">SemakSuplemen</a>. Any original opinions belong to that author and can be read at the source link. Jenama, formula, pensijilan dan bukti ujian mungkin berubah.</p>
 <p><strong>“Belum disemak” does not mean safe or unsafe.</strong> We may refer to information available online or published by brands, which may be incomplete or inaccurate. Check official labels, lab evidence, and contact the dedicated product/brand for reliable details.</p>
 <p class="semak-small">Data snapshot is manually curated, not live-synced. New opinions will only be published after an approved independent review.</p>
+</section>
+<section class="section semak-products" id="featured-products" aria-labelledby="featured-title">
+<div class="section-heading"><p class="section-index">04 / WHAT I USE</p><h2 id="featured-title">Products I Use</h2></div>
+<a class="semak-promo-card" href="/fitness/#products">
+<strong>My fitness essentials ↗</strong>
+<p>Nak tengok protein, prep meals and other products I personally use? Browse my main Fitness product list.</p>
+<span>Explore What I Use →</span>
+</a>
+</section>
+
+<section class="section semak-collab" id="collab" aria-labelledby="collab-title">
+<div class="section-heading"><p class="section-index">05 / LET'S COLLABORATE</p><h2 id="collab-title">Fitness / Health Brand?</h2></div>
+<p>For fitness, health, supplement, gym or lifestyle collaborations, contact me.</p>
+<a class="semak-btn semak-btn--accent" href="mailto:xshawalx@gmail.com?subject=Fitness%20Brand%20Collaboration">Email Me ↗</a>
+<div class="section-heading"><p class="section-index">FOLLOW ALONG</p><h2 class="semak-social-subtitle">Where to find me</h2></div>
+<div class="social-grid semak-follow-grid" id="social-links" aria-label="Shawal's social profiles"></div>
+<noscript><p class="semak-small">Follow @xshawalx on YouTube, Instagram, TikTok, Threads and Medium or find Mohd Noor Shawal on LinkedIn.</p></noscript>
 </section>
 </main>
 <footer class="footer"><p>Shawal <span aria-hidden="true">·</span> @xshawalx</p></footer></div>
