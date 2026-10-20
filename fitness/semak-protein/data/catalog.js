@@ -1,4 +1,4 @@
-/* Curated independent index, factual references only. Original opinions not reproduced. */
+/* Curated reference data from Semak Protein master: source tags are opinions/rankings from the external source, not independently verified. */
 window.SEMAK_PROTEIN_DATA = {
   "updated": "2026-10-20",
   "sourceHome": "https://sites.google.com/view/semaksuplemen/home",
@@ -13,7 +13,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "whey",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey",
+      "sourceTag": "Okay",
+      "sourceLabel": "Original source opinion: Confirm Okey"
     },
     {
       "id": "W002",
@@ -23,7 +25,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "whey",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey",
+      "sourceTag": "Okay",
+      "sourceLabel": "Original source opinion: Confirm Okey"
     },
     {
       "id": "W003",
@@ -33,7 +37,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "whey",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey",
+      "sourceTag": "Okay",
+      "sourceLabel": "Original source opinion: Confirm Okey"
     },
     {
       "id": "W004",
@@ -43,7 +49,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "whey",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey",
+      "sourceTag": "Okay",
+      "sourceLabel": "Original source opinion: Confirm Okey"
     },
     {
       "id": "W005",
@@ -53,7 +61,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "whey",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey",
+      "sourceTag": "Okay",
+      "sourceLabel": "Original source opinion: Confirm Okey"
     },
     {
       "id": "W006",
@@ -63,7 +73,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "whey",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey",
+      "sourceTag": "Likely Okay",
+      "sourceLabel": "Original source opinion: Likely Okey"
     },
     {
       "id": "W007",
@@ -73,7 +85,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "whey",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey",
+      "sourceTag": "Likely Okay",
+      "sourceLabel": "Original source opinion: Likely Okey"
     },
     {
       "id": "W008",
@@ -83,7 +97,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "whey",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey",
+      "sourceTag": "Likely Okay",
+      "sourceLabel": "Original source opinion: Likely Okey"
     },
     {
       "id": "W009",
@@ -93,7 +109,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "whey",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey",
+      "sourceTag": "Likely Okay",
+      "sourceLabel": "Original source opinion: Likely Okey"
     },
     {
       "id": "W010",
@@ -103,7 +121,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "whey",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey",
+      "sourceTag": "Okay",
+      "sourceLabel": "Original source opinion: Confirm Okey"
     },
     {
       "id": "W011",
@@ -113,7 +133,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "whey",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey",
+      "sourceTag": "Okay",
+      "sourceLabel": "Original source opinion: Confirm Okey"
     },
     {
       "id": "W012",
@@ -123,7 +145,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "whey",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/senarai-suplemen-whey",
+      "sourceTag": "Likely Okay",
+      "sourceLabel": "Original source opinion: Likely Okey"
     },
     {
       "id": "M001",
@@ -133,7 +157,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "mass",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer",
+      "sourceTag": "Likely Okay",
+      "sourceLabel": "Original source rating: 4/5; lab field: not specified"
     },
     {
       "id": "M002",
@@ -143,7 +169,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "mass",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer",
+      "sourceTag": "Okay",
+      "sourceLabel": "Original source rating: 5/5; lab field: not specified"
     },
     {
       "id": "M003",
@@ -153,7 +181,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "mass",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer",
+      "sourceTag": "Suspicious",
+      "sourceLabel": "Original source rating: 3/5; lab field: not specified"
     },
     {
       "id": "M004",
@@ -163,7 +193,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "mass",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer",
+      "sourceTag": "Suspicious",
+      "sourceLabel": "Original source rating: 2/5; lab field: not specified"
     },
     {
       "id": "M005",
@@ -173,7 +205,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "mass",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer",
+      "sourceTag": "Suspicious",
+      "sourceLabel": "Original source rating: 2/5; lab field: not specified"
     },
     {
       "id": "M006",
@@ -183,7 +217,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "mass",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer",
+      "sourceTag": "Suspicious",
+      "sourceLabel": "Original source rating: 3/5; lab field: not specified"
     },
     {
       "id": "M007",
@@ -193,7 +229,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "mass",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer",
+      "sourceTag": "Suspicious",
+      "sourceLabel": "Original source rating: 3/5; lab field: not specified"
     },
     {
       "id": "M008",
@@ -203,7 +241,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "mass",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer",
+      "sourceTag": "Suspicious",
+      "sourceLabel": "Original source rating: 3/5; lab field: not specified"
     },
     {
       "id": "M009",
@@ -213,7 +253,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "mass",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer",
+      "sourceTag": "Okay",
+      "sourceLabel": "Original source rating: 5/5; lab field: not specified"
     },
     {
       "id": "M010",
@@ -223,7 +265,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "mass",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer",
+      "sourceTag": "Okay",
+      "sourceLabel": "Original source rating: 5/5; lab field: not specified"
     },
     {
       "id": "M011",
@@ -233,7 +277,9 @@ window.SEMAK_PROTEIN_DATA = {
       "category": "mass",
       "status": "Belum disemak",
       "opinion": "Belum ada penilaian bebas",
-      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer"
+      "sourceUrl": "https://sites.google.com/view/semaksuplemen/suplemen-mass-gainer/senarai-suplemen-mass-gainer",
+      "sourceTag": "Suspicious",
+      "sourceLabel": "Original source rating: 3/5; lab field: not specified"
     }
   ]
 };
