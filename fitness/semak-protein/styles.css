@@ -1,0 +1,61 @@
+/* Semak Protein: independent responsive page, shares the orange/black design tokens. */
+.semak-hero{padding:24px 0 31px}
+.semak-back{display:inline-block;margin-bottom:27px;color:var(--muted);text-decoration:none;font:600 11px "Poppins",sans-serif}
+.semak-back:hover,.semak-method a:hover{color:var(--accent)}
+.semak-hero .intro{white-space:normal;max-width:610px;font-size:13px;line-height:1.75}
+.semak-hero .intro strong{color:var(--soft);font-weight:600}
+.semak-meta{color:var(--muted);font-size:11px;line-height:1.6;margin-top:17px}
+.semak-meta a,.semak-method a,.semak-source-links a{color:var(--accent);text-underline-offset:3px}
+.semak-small{color:var(--muted);font-size:11px;line-height:1.65;max-width:670px}
+.semak-directory{padding-top:24px}
+.semak-directory .section-heading{margin-bottom:17px}
+.semak-tabs{display:flex;gap:8px;margin-bottom:13px}
+.semak-tabs button{flex:1;min-height:44px;padding:10px;border:1px solid var(--line);border-radius:10px;background:var(--card);color:var(--muted);font:700 12px "Poppins",sans-serif;cursor:pointer}
+.semak-tabs button[aria-selected="true"]{border-color:var(--accent);background:rgba(255,138,31,.09);color:var(--accent)}
+.semak-toolbar{display:grid;grid-template-columns:minmax(0,1fr) auto;gap:8px}
+.semak-search input,.semak-status select,.semak-fields input,.semak-fields select,.semak-fields textarea{width:100%;box-sizing:border-box;border:1px solid rgba(255,255,255,.17);border-radius:10px;background:#181819;color:var(--ink);font:500 12px "Open Sans",sans-serif;min-height:44px;padding:10px 12px}
+.semak-search input::placeholder,.semak-fields input::placeholder,.semak-fields textarea::placeholder{color:#999}
+.semak-status{grid-column:1/-1}
+.semak-status select{min-height:39px;color:var(--soft);cursor:pointer}
+.semak-btn{min-height:44px;padding:11px 16px;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:10px;color:var(--ink);font:700 11px "Poppins",sans-serif;text-align:center;text-decoration:none;cursor:pointer}
+.semak-btn--accent{background:var(--accent);border-color:var(--accent);color:#17120d}
+.semak-btn--accent:hover:not(:disabled){background:#ff9d45}
+.semak-btn:disabled{opacity:.46;cursor:not-allowed}
+.semak-tabs button:focus-visible,.semak-btn:focus-visible,.semak-close:focus-visible,.semak-search input:focus-visible,.semak-status select:focus-visible,.semak-fields input:focus-visible,.semak-fields select:focus-visible,.semak-fields textarea:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.semak-count{margin:14px 0;color:var(--muted);font-size:11px}
+.semak-results{display:flex;flex-direction:column;gap:9px}
+.semak-listing{padding:13px 15px;border:1px solid var(--line);border-radius:12px;background:linear-gradient(115deg,#181818,#131313)}
+.semak-listing-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px}
+.semak-listing h3{font:700 14px/1.4 "Poppins",sans-serif;letter-spacing:-.015em;overflow-wrap:anywhere;margin:0 0 8px}
+.semak-chip{display:inline-flex;white-space:nowrap;padding:4px 8px;border-radius:99px;border:1px solid rgba(255,138,31,.35);color:var(--accent);font:700 9px "Poppins",sans-serif}
+.semak-facts{display:grid;grid-template-columns:1fr;gap:6px}
+.semak-fact{font-size:11px;line-height:1.6;color:var(--soft);overflow-wrap:anywhere}
+.semak-fact span{font-weight:700;color:var(--muted)}
+.semak-note{font-size:10px;line-height:1.65;color:var(--muted);margin:10px 0}
+.semak-original{display:inline-block;text-decoration:none;color:var(--accent);font:700 10px "Poppins",sans-serif}
+.semak-original:hover{text-decoration:underline}
+.semak-empty{padding:19px;color:var(--muted);border-radius:12px;border:1px dashed var(--line);font-size:12px;text-align:center}
+.semak-source-links{display:flex;flex-wrap:wrap;gap:7px;color:var(--muted);font-size:10px;line-height:1.5;margin-top:16px}
+.semak-request>p,.semak-method>p{max-width:640px;color:var(--soft);font-size:12px;line-height:1.75}
+.semak-request>.semak-btn{margin-top:12px}
+.semak-dialog{width:min(calc(100% - 24px),510px);max-height:min(90vh,850px);overflow-y:auto;box-sizing:border-box;padding:22px;background:#171717;color:var(--ink);border:1px solid rgba(255,138,31,.34);border-radius:16px;box-shadow:0 30px 80px #000b}
+.semak-dialog::backdrop{background:#000c;backdrop-filter:blur(3px)}
+.semak-dialog-head{display:flex;align-items:start;justify-content:space-between;gap:10px;margin-bottom:16px}
+.semak-dialog-head h2{font:700 22px "Poppins",sans-serif;margin:0}
+.semak-dialog-kicker{font:700 10px "Poppins",sans-serif;color:var(--accent);margin:0 0 5px}
+.semak-close{background:#242424;border:1px solid var(--line);border-radius:9px;color:var(--ink);font-size:23px;min-height:36px;min-width:36px;cursor:pointer}
+.semak-fields{display:grid;gap:12px}
+.semak-fields label{display:grid;gap:5px;color:var(--soft);font:600 11px "Poppins",sans-serif}
+.semak-fields textarea{resize:vertical}
+.semak-privacy,.semak-form-notice{font:400 10px/1.65 "Open Sans",sans-serif;color:var(--muted)}
+.semak-form-notice{margin:12px 0}
+.semak-dialog #submit-request{width:100%;margin-top:10px}
+.semak-honeypot{position:absolute!important;left:-9999px!important;width:1px!important;height:1px!important;opacity:0!important;pointer-events:none!important}
+.semak-success{display:grid;place-items:center;color:var(--accent);background:rgba(255,138,31,.13);font-size:23px;width:45px;height:45px;border-radius:50%;margin-bottom:15px}
+#submission-confirmation h3{font:700 17px "Poppins",sans-serif}
+#submission-confirmation p{font:400 12px/1.7 "Open Sans",sans-serif;color:var(--soft)}
+#submission-confirmation .semak-btn{margin-top:10px}
+[hidden]{display:none!important}
+@media(min-width:580px){.semak-toolbar{grid-template-columns:minmax(0,1fr) auto 180px}.semak-status{grid-column:auto}.semak-facts{grid-template-columns:1fr 1fr}.semak-listing{padding:16px}}
+@media(max-width:360px){.semak-listing h3{font-size:13px}.semak-chip{font-size:8px}.semak-dialog{padding:14px}}
+@media(prefers-reduced-motion:reduce){*,*:before,*:after{scroll-behavior:auto!important}}
