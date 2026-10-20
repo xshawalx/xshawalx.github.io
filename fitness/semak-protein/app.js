@@ -80,65 +80,90 @@
   statusSelect.addEventListener("change",render);
   switchCategory(category);
 
-  // Request handling: a valid, deployed Apps Script web-app endpoint is required.
+  // The private sheet is written through an Apps Script POST (no-CORS).
+  // Since the POST response is opaque, verify save status separately through a
+  // read-only JSONP status endpoint. Never show "received" on an unverified POST.
   const dialog=byId("submission-dialog"),form=byId("submission-form");
   const submit=byId("submit-request"),notice=byId("form-notice");
   const confirmation=byId("submission-confirmation");
-  const endpoint=String(window.SEMAK_PROTEIN_SUBMISSION_ENDPOINT||"").trim();
+  const endpoint=String(window.SEMAK_PROTEIN_SUBMISSION_ENDPOINT || "").trim();
   const enabled=/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(endpoint);
-  let pendingNonce="",lastTimer=null;
-
-  const inform=(message)=>{notice.hidden=false;notice.textContent=message;};
-  function showForm() {
-    form.hidden=false;confirmation.hidden=true;
-    form.reset();pendingNonce="";
+  let pendingNonce="";
+  let activeTimer=null;
+  const inform=message=>{notice.hidden=false;notice.textContent=message;};
+  const cancelTimer=()=>{if(activeTimer)clearTimeout(activeTimer);activeTimer=null;};
+  function resetSubmission() {
+    cancelTimer();pendingNonce="";
+    form.hidden=false;confirmation.hidden=true;form.reset();
+    submit.textContent="Submit for Checking";submit.disabled=!enabled;
     notice.hidden=true;
-    if(!enabled)inform("Submission form belum aktif — Google Sheets connection is being prepared. Please check back soon.");
-    submit.disabled=!enabled;submit.textContent="Submit for Checking";
-    if (typeof dialog.showModal === "function")dialog.showModal();
+    if(!enabled)inform("Borang submission belum aktif. We're completing the Google Sheets connection. Please return soon.");
   }
-  function closeForm() {
-    if(lastTimer)clearTimeout(lastTimer);
-    lastTimer=null;pendingNonce="";
-    dialog.close();
-  }
-  byId("open-submission").addEventListener("click",showForm);
-  byId("close-submission").addEventListener("click",closeForm);
-  byId("submission-done").addEventListener("click",closeForm);
-  dialog.addEventListener("click",e=>{if(e.target===dialog)closeForm();});
-  dialog.addEventListener("cancel",()=>{pendingNonce="";});
-  if(enabled){form.action=endpoint;submit.disabled=false;}
-
-  form.addEventListener("submit",e=>{
-    if(!enabled){e.preventDefault();inform("Submissions are not available yet.");return;}
-    if(!form.checkValidity()){e.preventDefault();form.reportValidity();return;}
-    if(pendingNonce){e.preventDefault();return;}
-    pendingNonce=Date.now().toString(36)+Math.random().toString(36).slice(2,14);
-    byId("request-nonce").value=pendingNonce;
-    submit.disabled=true;submit.textContent="Submitting…";
-    inform("Sending request. Waiting for Google Sheets confirmation…");
-    lastTimer=setTimeout(()=>{
-      if(!pendingNonce)return;
-      pendingNonce="";submit.disabled=false;submit.textContent="Try Again";
-      inform("Belum terima pengesahan. Please try again later; the request may not have arrived.");
-    },25000);
-    // Native HTML form POST into an iframe avoids CORS issues. Do not claim
-    // success until the Apps Script response sends a verified postMessage.
+  byId("open-submission").addEventListener("click",()=>{
+    resetSubmission();
+    if(typeof dialog.showModal==="function")dialog.showModal();
   });
+  const close=()=>{pendingNonce="";cancelTimer();if(dialog.open)dialog.close();};
+  byId("close-submission").addEventListener("click",close);
+  byId("submission-done").addEventListener("click",close);
+  dialog.addEventListener("click",e=>{if(e.target===dialog)close();});
+  dialog.addEventListener("cancel",()=>{pendingNonce="";cancelTimer();});
 
-  window.addEventListener("message",event=>{
-    if(!pendingNonce || !event.data || event.data.type!=="semak-protein:submission")return;
-    if(!/^https:\/\/script\.google(?:usercontent)?\.com$/.test(event.origin))return;
-    if(event.data.nonce!==pendingNonce)return;
-    if(lastTimer)clearTimeout(lastTimer);lastTimer=null;
-    pendingNonce="";
-    if(event.data.status!=="success"){
+  const finish=(data,nonce)=>{
+    if(nonce!==pendingNonce)return;
+    cancelTimer();pendingNonce="";
+    if(!data || data.status!=="success"){
       submit.disabled=false;submit.textContent="Try Again";
-      inform("Submission belum berjaya. "+(event.data.reason || "Please try again."));
+      inform("Submission belum berjaya. "+(data && data.reference ? data.reference : "Please try later."));
       return;
     }
     form.hidden=true;confirmation.hidden=false;
-    byId("submission-reference").textContent=event.data.reference ? "Reference: "+event.data.reference : "";
-    submit.textContent="Submit for Checking";
+    byId("submission-reference").textContent=data.reference ? "Reference: "+data.reference : "";
+  };
+  function checkStatus(nonce,attempt,startedAt) {
+    if(nonce!==pendingNonce)return;
+    if(Date.now()-startedAt>28000){
+      finish({status:"error",reference:"No save confirmation received. It may have arrived; please check before retrying."},nonce);
+      return;
+    }
+    const callback="semakAck"+nonce.replace(/[^a-z0-9]/g,"").slice(0,38);
+    const tag=document.createElement("script");
+    let handled=false;
+    function cleanup(){
+      tag.remove();
+      try{delete window[callback];}catch(e){window[callback]=undefined;}
+    }
+    const retry=()=>{
+      if(handled)return;
+      handled=true;cleanup();
+      activeTimer=setTimeout(()=>checkStatus(nonce,attempt+1,startedAt),1600);
+    };
+    window[callback]=result=>{
+      if(handled)return;
+      handled=true;cleanup();
+      if(nonce!==pendingNonce)return;
+      if(result && result.status==="success"){finish(result,nonce);return;}
+      if(result && result.status==="error"){finish(result,nonce);return;}
+      activeTimer=setTimeout(()=>checkStatus(nonce,attempt+1,startedAt),1600);
+    };
+    tag.onerror=retry;
+    activeTimer=setTimeout(retry,4500);
+    tag.src=endpoint+"?nonce="+encodeURIComponent(nonce)+"&callback="+
+      encodeURIComponent(callback)+"&r="+String(attempt);
+    document.head.appendChild(tag);
+  }
+
+  form.addEventListener("submit",event=>{
+    event.preventDefault();
+    if(!enabled){inform("Submissions aren't active yet.");return;}
+    if(!form.reportValidity() || pendingNonce)return;
+    const nonce=Date.now().toString(36)+Math.random().toString(36).slice(2,20);
+    pendingNonce=nonce;byId("request-nonce").value=nonce;
+    submit.disabled=true;submit.textContent="Submitting…";
+    inform("Menghantar dan mengesahkan penerimaan. Please wait…");
+    const body=new URLSearchParams(new FormData(form));
+    fetch(endpoint,{method:"POST",body,mode:"no-cors",credentials:"omit",cache:"no-store"})
+      .catch(()=>{}) // Confirmation is based on server status, not opaque fetch outcome.
+      .finally(()=>{if(nonce===pendingNonce)checkStatus(nonce,0,Date.now());});
   });
 })();
