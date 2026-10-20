@@ -101,7 +101,7 @@
   const submit=byId("submit-request"),notice=byId("form-notice");
   const confirmation=byId("submission-confirmation");
   const endpoint=String(window.SEMAK_PROTEIN_SUBMISSION_ENDPOINT || "").trim();
-  const enabled=/^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(endpoint);
+  const enabled=window.SEMAK_PROTEIN_SUBMISSION_READY === true && /^https:\/\/script\.google\.com\/macros\/s\/[A-Za-z0-9_-]+\/exec$/.test(endpoint);
   let pendingNonce="";
   let activeTimer=null;
   const inform=message=>{notice.hidden=false;notice.textContent=message;};
@@ -111,7 +111,7 @@
     form.hidden=false;confirmation.hidden=true;form.reset();
     submit.textContent="Submit for Checking";submit.disabled=!enabled;
     notice.hidden=true;
-    if(!enabled)inform("Borang submission belum aktif. We're completing the Google Sheets connection. Please return soon.");
+    if(!enabled)inform("Borang belum aktif: Google Apps Script perlukan akses awam (Anyone). Please check back after setup.");
   }
   byId("open-submission").addEventListener("click",()=>{
     resetSubmission();
