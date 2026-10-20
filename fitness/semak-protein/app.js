@@ -8,6 +8,9 @@
   const input = byId("semak-query"), statusSelect = byId("semak-status");
   const tabs = Array.from(document.querySelectorAll(".semak-tabs button[data-category]"));
   let category = "whey";
+  let visibleLimit = 5;
+  const PAGE_SIZE = 5;
+  const viewMore = byId("semak-view-more");
 
   const node = (tag, className, text) => {
     const e = document.createElement(tag);
@@ -17,7 +20,7 @@
   };
   const normalized = value => String(value || "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").toLowerCase().trim();
 
-  for (const s of [...new Set(all.map(x => x.status).filter(Boolean))].sort()) {
+  for (const s of ["Okay", "Likely Okay", "Suspicious", "Scam"]) {
     const opt = document.createElement("option");
     opt.value = s; opt.textContent = s;
     statusSelect.append(opt);
@@ -32,13 +35,19 @@
   function card(p) {
     const e = node("article","semak-listing");
     const head = node("div","semak-listing-top");
-    head.append(node("h3","",p.name),node("span","semak-chip",p.status || "Belum disemak"));
+    const tag = p.sourceTag || "Not rated";
+    const badge = node("span", "semak-chip semak-chip--" + ({
+      "Okay":"okay","Likely Okay":"likely","Suspicious":"suspicious","Scam":"scam"
+    }[tag] || "unrated"), tag);
+    badge.title = "Sumber asal / Source opinion — not independently verified";
+    head.append(node("h3","",p.name), badge);
     e.append(head);
     const facts = node("div","semak-facts");
     facts.append(fact("Asal (menurut sumber)",p.origin),fact("Maklumat lab test (sumber)",p.labTest));
-    facts.append(fact("Pendapat kami",p.opinion || "Belum ada penilaian bebas"));
+    facts.append(fact("Tag asal (source opinion)",p.sourceLabel || "Tidak dinyatakan"));
+    facts.append(fact("Penilaian bebas kami",p.opinion || "Belum ada penilaian bebas"));
     e.append(facts);
-    e.append(node("p","semak-note","Source information has not been independently verified. Formula and certification may vary."));
+    e.append(node("p","semak-note","Source attribution only. Not an independent finding or current-batch lab verification. Formula and certification may vary."));
     const link = node("a","semak-original","Lihat sumber asal & pendapat penulis ↗");
     link.href = p.sourceUrl || db.sourceHome;
     link.target = "_blank"; link.rel = "noopener noreferrer";
@@ -48,10 +57,13 @@
 
   function render() {
     const q = normalized(input.value), filter = statusSelect.value;
-    const visible = all.filter(p => p.category === category && (filter === "all" || p.status === filter) &&
+    const visible = all.filter(p => p.category === category && (filter === "all" || p.sourceTag === filter) &&
       (!q || normalized([p.name,p.origin,p.id,p.labTest].join(" ")).includes(q)));
-    results.replaceChildren(...visible.map(card));
-    counter.textContent = visible.length + " product(s) shown · Information is a reference, not a verified verdict.";
+    const listed = visible.slice(0, visibleLimit);
+    results.replaceChildren(...listed.map(card));
+    counter.textContent = listed.length + " of " + visible.length + " products · Tags are attributed source opinions only.";
+    viewMore.hidden = visible.length <= visibleLimit;
+    if (!viewMore.hidden) viewMore.textContent = "View More (" + (visible.length - visibleLimit) + " remaining) ↓";
     empty.hidden = visible.length !== 0;
     results.setAttribute("aria-labelledby", category === "whey" ? "tab-whey" : "tab-mass");
     byId("semak-category-source").href = category === "whey" ? db.sourceWhey : db.sourceMass;
@@ -60,6 +72,7 @@
 
   function switchCategory(next) {
     category = next;
+    visibleLimit = PAGE_SIZE;
     tabs.forEach(tab => {
       const isActive = tab.dataset.category === next;
       tab.setAttribute("aria-selected",String(isActive));
@@ -75,9 +88,10 @@
     const next = tabs[(idx + (event.key === "ArrowRight" ? 1 : tabs.length-1)) % tabs.length];
     next.focus(); switchCategory(next.dataset.category);
   }));
-  byId("semak-search-form").addEventListener("submit", e => {e.preventDefault();render();});
-  input.addEventListener("input",render);
-  statusSelect.addEventListener("change",render);
+  viewMore.addEventListener("click", () => {visibleLimit += PAGE_SIZE;render();});
+  byId("semak-search-form").addEventListener("submit", e => {e.preventDefault();visibleLimit = PAGE_SIZE;render();});
+  input.addEventListener("input",() => {visibleLimit=PAGE_SIZE;render();});
+  statusSelect.addEventListener("change",() => {visibleLimit=PAGE_SIZE;render();});
   switchCategory(category);
 
   // The private sheet is written through an Apps Script POST (no-CORS).
