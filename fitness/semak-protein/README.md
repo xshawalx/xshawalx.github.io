@@ -7,7 +7,23 @@ Public URL: https://xshawalx.github.io/fitness/semak-protein/
 - Sources: https://sites.google.com/view/semaksuplemen/home
 - The public directory only includes 23 selectively curated brand / product identifiers, source-stated origin, source-stated lab-test descriptions and original-source links. **No original ratings, detailed opinions or extensive source database are republished.**
 - All entries begin as **Belum disemak / Belum ada penilaian bebas**. No verification, accusation, endorsement or lab testing is implied by inclusion.
-- The submission form is purposely NOT live until a functioning Apps Script backend is deployed and tested. Its disabled state is honest and does not falsely tell visitors that a request was saved.
+- The Apps Script endpoint was provided by the owner on 20 October 2026 and placed in `submission-config.js`, but a public read-only browser check returned Google Drive **access denied (403)**. `SEMAK_PROTEIN_SUBMISSION_READY` remains `false` until access is corrected and a real end-to-end test confirms a saved row. Never enable merely because a URL was supplied.
+
+
+## Updated UI and source categories
+- Search is compact on mobile, tabs are separate, and each tab reveals only five products initially. `View More` adds five on each click. Searching or changing filters or tabs resets to five.
+- Each visible card's green **Okay**, blue **Likely Okay**, yellow **Suspicious**, or red **Scam** tag is a *source-attributed simplified category*, **NOT our independently verified opinion**.
+- The original source's statuses `Confirm Okey` → Okay; `Likely Okey` → Likely Okay; `Spiking / Suspicious` → Suspicious; `SCAM` and `SCAM / REDEMPTION ARC` → Scam. Source red-label allegations need prominent attribution and evidence; never invent them.
+- Mass gainer source 5 stars → Okay, 4 stars → Likely Okay, 2–3 stars → Suspicious. 1 star only maps to Scam if the source separately explicitly records SCAM lab information; otherwise Suspicious. These are adaptations for navigation, not independent proof.
+- Original sources belong to the SemakSuplemen author; keep its website source link on cards. Do not republish extensive descriptions or bulk mirror without permission.
+- The owner-controlled Master Listings sheet has two new columns: `Source Tag (not independently verified)` and `Source Label / Rating`. The private `Our Opinion` and `Our Status` remain separate for future independent reviews.
+- New section 04 navigates to `/fitness/#products`; section 05 repeats the public collaboration email CTA and the six social profiles.
+
+## Apps Script access blocker on 20 October 2026
+- The owner supplied a deployed `/exec` URL but publicly anonymous GET redirected to a Google Drive `You need permission` screen.
+- Owner should open Apps Script > Deploy > Manage deployments > edit the Web App deployment and ensure **Execute as Me** and **Who has access: Anyone**, then authorize/redeploy; ensure owner-supplied code is the deployed version and not a restricted editor preview.
+- Before enabling the public button, verify a read-only `GET /exec?nonce=abc12345zz998877&callback=semakProbe` returns JavaScript in the shape `semakProbe({"status":"pending"});`, not access-denied HTML.
+- Test one clearly labeled request and verify a matching **Pending** row and on-page success receipt. Keep disabled if any step fails.
 
 ## Google Sheets
 Two native spreadsheets were created in the owner's connected Google Drive:
