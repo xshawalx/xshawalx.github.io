@@ -2,3 +2,4 @@ User-agent: *
 Allow: /
 
 Sitemap: https://xshawalx.github.io/sitemap.xml
+Sitemap: https://xshawalx.github.io/prompts/sitemap.xml
